@@ -1,0 +1,251 @@
+/*
+ * Global styles for the P&P journalism e‑book website.
+ * We keep the design simple and modern so that the focus remains on learning.
+ * Colours are inspired by India: deep blues and warm yellows.
+ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  color: #0d47a1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation bar */
+nav {
+  background-color: #0d47a1;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 1rem;
+}
+
+nav li a {
+  color: #fff;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+nav li a:hover,
+nav li a.active {
+  background-color: #1565c0;
+}
+
+/* Page container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 4rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+
+.hero h1 {
+  position: relative;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  position: relative;
+  max-width: 700px;
+  font-size: 1.1rem;
+}
+
+/* Cards grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.card button {
+  background-color: #0d47a1;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+
+.card button:hover {
+  background-color: #1565c0;
+}
+
+/* Section headings */
+h2 {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  color: #0d47a1;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+}
+
+/* Accordion */
+.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  position: relative;
+}
+
+.accordion-header::after {
+  content: '+';
+  position: absolute;
+  right: 1rem;
+  top: 0.8rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.accordion-header.active::after {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  display: none;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+/* Citation style */
+.citations {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 1rem;
+}
+
+.citations a {
+  color: #0d47a1;
+}
+
+/* Footer */
+footer {
+  background-color: #0d47a1;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav li {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  .hero {
+    padding: 2rem 1rem;
+  }
+}
